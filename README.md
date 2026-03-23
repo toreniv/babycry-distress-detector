@@ -1,4 +1,8 @@
-# Baby Cry Classifier — Hungry vs. Distress
+# 🍼 Baby Cry Classifier — Hungry vs. Distress
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.19-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 A binary audio classifier that detects whether a baby's cry indicates
 **hunger** or **distress** (discomfort, belly pain, burping, tiredness).
@@ -18,6 +22,14 @@ trained as a **3-model ensemble** with a dual-threshold safety system.
 |--------------|-------------------|-----------|---------------------------|
 | Safety First | ≥ 95%             | Lower     | Never miss a distress cry |
 | Balanced     | High              | Higher    | F2-optimized trade-off    |
+
+### Evaluation Plots
+
+![Results](images/result.png)
+
+### Training Output
+
+![Terminal Output](images/output.png)
 
 ---
 
@@ -41,7 +53,7 @@ Sigmoid output → Dual threshold (Safety / Balanced)
 - **Distress** (label 1): pitch shift, time stretch, additive noise
 - **Hungry** (label 0): volume gain, time shift — gentle balance
 
-**Data split:** 70% Train / 15% Val / 15% Test
+**Data split:** 70% Train / 15% Val / 15% Test  
 Split is performed *before* augmentation to prevent data leakage.
 
 ---
@@ -67,12 +79,15 @@ Place the cloned `donateacry-corpus/` folder next to `train.py`.
 ### Expected folder structure
 
 ```
-Baby cry/
+babycry-distress-detector/
 ├── train.py
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
 ├── LICENSE
+├── images/
+│   ├── result.png
+│   └── output.png
 └── donateacry-corpus/
     ├── hungry/          ← label 0  (Hungry)
     ├── discomfort/      ← label 1  (Distress)
@@ -88,8 +103,8 @@ Baby cry/
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/baby-cry-classifier.git
-cd baby-cry-classifier
+git clone https://github.com/toreniv/babycry-distress-detector.git
+cd babycry-distress-detector
 ```
 
 ### 2. Create a virtual environment
@@ -136,12 +151,15 @@ python train.py
 ## Project Structure
 
 ```
-Baby cry/
+babycry-distress-detector/
 ├── train.py              # Main training + evaluation script
 ├── requirements.txt      # Python dependencies
 ├── .gitignore
 ├── README.md
 ├── LICENSE
+├── images/               # Result screenshots
+│   ├── result.png
+│   └── output.png
 ├── saved_models/         # Auto-created at runtime — model weights
 └── results.png           # Auto-created at runtime — evaluation plots
 ```
@@ -153,11 +171,10 @@ Baby cry/
 | Problem | Fix |
 |---|---|
 | `python` not found | Disable **App Execution Aliases** in Windows Settings → Apps → Advanced app settings |
-| `requirements.txt` not found | Make sure you're inside the project folder: `cd "Baby cry"` |
+| `requirements.txt` not found | Make sure you're inside the project folder: `cd babycry-distress-detector` |
 | `ModuleNotFoundError` | Activate the venv first: `.\tensorflow_env\Scripts\Activate.ps1` |
 | Pylance red underlines in VSCode | `Ctrl+Shift+P` → **Python: Select Interpreter** → pick `tensorflow_env` |
 | Dataset not found | Run `git clone https://github.com/gveres/donateacry-corpus.git` inside the project folder |
-| `pip` upgrade notice | Run `python -m pip install --upgrade pip` — optional but recommended |
 
 ---
 
