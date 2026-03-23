@@ -1,0 +1,71 @@
+# ===========================
+# Datasets — never upload audio data
+# ===========================
+donateacry-corpus/
+donateacry_corpus/
+donateacry_corpus_cleaned_and_updated_data/
+infant_cry_audio_corpus/
+*.wav
+*.WAV
+*.mp3
+*.flac
+
+# ===========================
+# Model weights
+# ===========================
+saved_models/
+*.h5
+*.weights.h5
+*.pb
+*.pkl
+*.pt
+*.pth
+
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ===========================
+# Virtual environments
+# ===========================
+tensorflow_env/
+venv/
+.venv/
+env/
+ENV/
+
+# ===========================
+# VSCode
+# ===========================
+.vscode/
+*.code-workspace
+
+# ===========================
+# Jupyter
+# ===========================
+.ipynb_checkpoints/
+*.ipynb
+
+# ===========================
+# OS
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Misc
+# ===========================
+*.log
+*.tmp
+*.zip
+*.tar.gz
